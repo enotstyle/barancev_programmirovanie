@@ -1,6 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from barancev_programmirovanie.model.group import Group
 from barancev_programmirovanie.fixture.session import SessionHelper
 from barancev_programmirovanie.fixture.group import GroupHelper
 
@@ -18,3 +16,4 @@ class Application:
 
     def destroy(self):
         self.wd.quit()
+
