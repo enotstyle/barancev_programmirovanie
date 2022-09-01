@@ -10,3 +10,7 @@ def test_delete_first_group(app):
     assert len(old_groups) - 1 == len(new_groups)
     old_groups[0:1] = []
     assert old_groups == new_groups
+
+def test_delete_all_groups(app):
+    app.group.del_all_groups()
+    assert app.group.count() == 0
