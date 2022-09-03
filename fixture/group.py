@@ -76,7 +76,7 @@ class GroupHelper:
 
     def modify_first_group(self, new_group_data):
         wd = self.app.wd
-        self.modify_group_by_index(0)
+        self.modify_group_by_index(new_group_data, 0)
 
     def count(self):
         wd = self.app.wd
