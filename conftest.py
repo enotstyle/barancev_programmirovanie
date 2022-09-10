@@ -46,15 +46,11 @@ def pytest_generate_tests(metafunc):
         elif fixture.startswith("json_"):
             testdata = load_form_json(fixture[5:])
             metafunc.parametrize(fixture, testdata, ids=[str(x) for x in testdata])
-#
-# def load_from_module(module):
-#     print('xxxxxxxxx', module)
-#     return importlib.import_module(f"data.{module}").testdata
 
 
 def load_from_module(module):
-    print('xxxxxxxxx', module)
     return importlib.import_module(f"barancev_programmirovanie.data.{module}").testdata
+
 
 def load_form_json(file):
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), f"data/{file}.json")) as f:

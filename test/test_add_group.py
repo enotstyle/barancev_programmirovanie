@@ -1,7 +1,4 @@
-import pytest
-
 from barancev_programmirovanie.model.group import Group
-
 
 
 def test_add_group(app, data_groups):
