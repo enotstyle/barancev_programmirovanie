@@ -49,9 +49,9 @@ def stop(request):
     return fixture
 
 
-def pytest_addoption(parser):
-    parser.addoption('--browser', action='store', default='firefox')
-    parser.addoption('--target', action='store', default='target.json')
+@pytest.fixture
+def check_ui(request):
+    return request.config.getoption("--check_ui")
 
 
 def pytest_generate_tests(metafunc):
@@ -73,3 +73,7 @@ def load_from_json(file):
         return jsonpickle.decode(f.read())
 
 
+def pytest_addoption(parser):
+    parser.addoption('--browser', action='store', default='firefox')
+    parser.addoption('--target', action='store', default='target.json')
+    parser.addoption('--check_ui', action='store_true')
